@@ -191,8 +191,14 @@ if __name__ == '__main__':
       extra_compile_args.append('-Wno-shorten-64-to-32')
 
     v, _, _ = platform.mac_ver()
-    if not v:
+    print "Mac Version:"
+    print v
+    if v:
+      print "before join"
+      print v
       v = float('.'.join(v.split('.')[:2]))
+      print "after join"
+      print v
       if v >= 10.12:
         extra_compile_args=['-std=c++11'],
 
